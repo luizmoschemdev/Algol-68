@@ -1,0 +1,153 @@
+#Faça um algoritmo que leia o nome, o sexo e o estado civil de uma pessoa.
+Caso sexo seja “F” e estado civil seja “CASADA”, solicitar o tempo de
+casada (anos).#
+
+
+
+BEGIN
+INT sx, est, idd;
+STRING nm;
+
+    print(("Qual seu nome? ", new line));
+    read (nm);
+    print(("Qual seu sexo? (1 Masculino 2 Feminino) ", new line));
+    read (sx);
+    print("Qual seu estado cívil? (1 Solteiro, 2 Casada) ");
+    read(est);
+
+        IF est = 2
+            THEN
+            print("Quanto tempo de casamento? ");
+            read(idd)
+        FI
+END 
+
+#Faça um algoritmo que leia dois valores inteiros A e B se os valores forem
+iguais deverá se somar os dois, caso contrário multiplique A por B. Ao final
+de qualquer um dos cálculos deve-se atribuir o resultado para uma variável
+C e mostrar seu conteúdo na tela.#
+
+BEGIN
+INT a, b, c;
+
+    print("Informe o primeiro número: ");
+    read(a);
+    print ("informe o segundo número: ");
+    read(b);
+
+        IF a = b THEN 
+            c := a + b;
+                print(("o resultado é", c))
+        ELSE IF a /= b THEN
+            c := a * b;
+                print (("o resultado é", c))    
+            FI
+        FI   
+END
+
+#Encontrar o dobro de um número caso ele seja positivo e o seu triplo caso
+seja negativo, imprimindo o resultado.#
+
+BEGIN
+REAL n;
+
+    print ("digite um número");
+    read (n);
+
+        IF n < 0
+            THEN
+            print (n*2)
+
+        ELSE IF n > 0
+            THEN
+            print (n*3)
+            FI
+        FI
+    
+END
+
+#Programa de lados de polígono#
+
+BEGIN
+    INT n;
+
+        print ("Informe o número de lados do seu poligono: ");
+        read (n);
+        
+            IF n = 4
+                THEN
+        print ("Quadrado")
+            ELSE IF n = 3
+                THEN
+        print ("Triangulo")
+            ELSE IF n = 5
+                THEN
+        print ("Pentágono")
+            ELSE IF n > 5
+                THEN
+        print ("Polígono não identificado.")
+            ELSE IF n < 3
+                THEN
+        print ("Polígono não identificado.")
+                    FI
+                FI
+            FI
+        FI
+    FI
+        
+END
+
+#Programa de impar ou par#
+
+BEGIN
+    INT n;
+    print("escreva um número: ");
+    read(n);
+    
+    IF n MOD 2 = 0 THEN
+        print("par")
+    ELSE
+        print("impar")
+    FI
+END
+
+#calculadora de algol#
+
+BEGIN
+    REAL n1, n2, op;
+        print (("Escolha a operação 1 SOMA. 2 SUBTRAÇÃO. 3 MULTIPLICAÇÃO. 4 DIVISÃO)", new line));
+        read (op);
+        
+            IF op = 1
+                THEN
+            print (("Digite um número: ", new line));
+            read (n1);
+            print (("Digite um número: ", new line));
+            read (n2);
+            print (( "Seu resultado é: ", fixed (n1 + n2, 0, 2)))
+                ELSE IF op = 2
+                    THEN 
+                print (("Digite um número: ", new line));
+                read (n1);
+                print (("Digite um número: ", new line));
+                read (n2);
+                print (( "Seu resultado é: ", fixed (n1 - n2, 0, 2)))
+                    ELSE IF op = 3
+                        THEN
+                    print (("Digite um número: ", new line));
+                    read (n1);
+                    print (("Digite um número: ", new line));
+                    read (n2);
+                    print (( "Seu resultado é: ", fixed (n1 * n2, 0, 2)))
+                        ELSE IF op = 4
+                            THEN
+                        print (("Digite um número: ", new line));
+                        read (n1);
+                        print (("Digite um número: ", new line));
+                        read (n2);
+                        print (( "Seu resultado é: ", fixed (n1 / n2, 0, 2)))
+                            FI
+                        FI
+                    FI
+                FI
+END

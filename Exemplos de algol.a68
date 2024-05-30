@@ -1,0 +1,17 @@
+#Programa de sequência de fibonacci#
+
+PROC print fibo = (INT n) VOID :
+    BEGIN
+        INT  a := 0, b := 1;
+        FOR i TO n DO
+            print((whole(i, 0), " => ", whole(b, 0), new line));
+            INT c = a + b;
+            a := b;
+            b := c
+        OD
+    END;
+
+INT i;
+print ("Digite o número de termos da sua sequência de fibonacci: ");
+read ((i, new line));
+print fibo (i)
