@@ -124,30 +124,32 @@ BEGIN
             read (n1);
             print (("Digite um número: ", new line));
             read (n2);
-            print (( "Seu resultado é: ", fixed (n1 + n2, 0, 2)))
+            print (( "Seu resultado é: ", fixed (n1 + n2, 0, 1))
                 ELSE IF op = 2
                     THEN 
                 print (("Digite um número: ", new line));
                 read (n1);
                 print (("Digite um número: ", new line));
                 read (n2);
-                print (( "Seu resultado é: ", fixed (n1 - n2, 0, 2)))
+                print (( "Seu resultado é: ", fixed (n1 - n2, 0, 1)))
                     ELSE IF op = 3
                         THEN
                     print (("Digite um número: ", new line));
                     read (n1);
                     print (("Digite um número: ", new line));
                     read (n2);
-                    print (( "Seu resultado é: ", fixed (n1 * n2, 0, 2)))
+                    print (( "Seu resultado é: ", fixed (n1 * n2, 0, 1)))
                         ELSE IF op = 4
                             THEN
                         print (("Digite um número: ", new line));
                         read (n1);
                         print (("Digite um número: ", new line));
                         read (n2);
-                        print (( "Seu resultado é: ", fixed (n1 / n2, 0, 2)))
+                        print (( "Seu resultado é: ", fixed (n1 / n2, 0, 1)))
                             FI
                         FI
                     FI
                 FI
 END
+
+#
