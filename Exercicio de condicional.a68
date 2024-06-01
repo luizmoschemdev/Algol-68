@@ -152,4 +152,121 @@ BEGIN
                 FI
 END
 
-#
+#Faça um programa que peça para o usuário inserir 
+uma idade e mostre na tela se ele é maior de idade ou não.#
+
+BEGIN
+INT idd;
+    print ("Digite sua idade: ");
+    read (idd);
+
+        IF idd < 18
+            THEN
+        print ("Você é menor de idade.")
+        ELSE IF idd >= 18
+            THEN
+        print ("Você é maior de idade.")
+            FI
+        FI
+END
+
+ #Faça um programa que peça para o usuário inserir um nome, pergunte se ele gosta do nome 
+ em ambos os possíveis casos de resposta (Sim ou Não), mostre uma mensagem de sua escolha na tela.#
+
+ BEGIN
+ STRING nm;
+ INT alt; 
+
+    print (("Digite seu nome: ", new line));
+    read (nm);
+    print (("Você gosta do seu nome? ", new line));
+    read (alt);
+
+        IF alt = 1
+            THEN
+        print ("Que bom!")
+        ELSE IF alt = 2
+            THEN
+        print ("É uma pena, tente mudar seu nome no cartório.")
+        
+        ELSE 
+            print ("Digite 1 ou 2 para continuar.")
+            FI
+        FI     
+ END
+
+ #Escreva um programa em ALGOL 68 que:
+
+Peça ao usuário para inserir um número.
+Verifique se o número é positivo, negativo ou zero.
+Exiba uma mensagem apropriada para cada caso.#
+
+BEGIN
+REAL n;
+    
+    print ("Digite qualquer número: ");
+    read (n);
+
+    IF n < 0
+        THEN
+    print ("Número negativo.")
+
+    ELSE IF n = 0
+        THEN
+    print ("Zero.")
+
+    ELSE
+    print ("Número positivo.")
+        FI
+    FI
+
+END
+
+#Peça ao usuário para inserir sua altura (em metros) e seu peso (em quilogramas).
+Calcule o índice de massa corporal (IMC) usando a fórmula: IMC = peso / (altura * altura).
+Determine a categoria de peso com base no valor do IMC:
+Abaixo do peso: IMC < 18.5
+Peso normal: 18.5 ≤ IMC < 25
+Sobrepeso: 25 ≤ IMC < 30
+Obesidade grau I: 30 ≤ IMC < 35
+Obesidade grau II: 35 ≤ IMC < 40
+Obesidade grau III: IMC ≥ 40
+Exiba o valor do IMC e a categoria de peso correspondente.#
+
+BEGIN
+REAL alt, kg, imc;
+
+
+    print ("Digite sua altura");
+    read (alt);
+    print ("Digte seu peso");
+    read (kg);
+
+    imc := kg / (alt * alt);
+
+    print ("Seu IMC é", imc);
+
+    IF imc < 18.5 THEN
+        print ("Abaixo do peso.")
+
+    ELSE IF imc >= 18.5 AND imc < 25 THEN
+        print ("Peso normal.")
+
+    ELSE IF imc >= 25 AND imc < 30 THEN
+        print ("Sobrepeso.")
+
+    ELSE IF imc >= 30 AND imc < 30 THEN 
+        print ("Obesidade grau I")
+
+    ELSE IF  imc >= 35 AND imc < 40 THEN 
+        print ("Obesidade grau II")
+
+    ELSE IF imc > 40 THEN 
+        print ("Obesidade grau III")
+        FI
+        FI
+        FI
+        FI
+        FI
+        FI
+END
