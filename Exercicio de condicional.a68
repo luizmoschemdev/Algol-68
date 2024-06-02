@@ -1,9 +1,6 @@
 #Faça um algoritmo que leia o nome, o sexo e o estado civil de uma pessoa.
 Caso sexo seja “F” e estado civil seja “CASADA”, solicitar o tempo de
 casada (anos).#
-
-
-
 BEGIN
 INT sx, est, idd;
 STRING nm;
@@ -38,10 +35,9 @@ INT a, b, c;
         IF a = b THEN 
             c := a + b;
                 print(("o resultado é", c))
-        ELSE IF a /= b THEN
+        ELIF a /= b THEN
             c := a * b;
                 print (("o resultado é", c))    
-            FI
         FI   
 END
 
@@ -58,10 +54,9 @@ REAL n;
             THEN
             print (n*2)
 
-        ELSE IF n > 0
+        ELIF n > 0
             THEN
             print (n*3)
-            FI
         FI
     
 END
@@ -77,22 +72,18 @@ BEGIN
             IF n = 4
                 THEN
         print ("Quadrado")
-            ELSE IF n = 3
+            ELIF n = 3
                 THEN
         print ("Triangulo")
-            ELSE IF n = 5
+            ELIF n = 5
                 THEN
         print ("Pentágono")
-            ELSE IF n > 5
+            ELIF n > 5
                 THEN
         print ("Polígono não identificado.")
-            ELSE IF n < 3
+            ELIF n < 3
                 THEN
         print ("Polígono não identificado.")
-                    FI
-                FI
-            FI
-        FI
     FI
         
 END
@@ -124,31 +115,28 @@ BEGIN
             read (n1);
             print (("Digite um número: ", new line));
             read (n2);
-            print (( "Seu resultado é: ", fixed (n1 + n2, 0, 1))
-                ELSE IF op = 2
+            print (( "Seu resultado é: ", fixed (n1 + n2, 0, 1)))
+                ELIF op = 2
                     THEN 
                 print (("Digite um número: ", new line));
                 read (n1);
                 print (("Digite um número: ", new line));
                 read (n2);
                 print (( "Seu resultado é: ", fixed (n1 - n2, 0, 1)))
-                    ELSE IF op = 3
+                    ELIF op = 3
                         THEN
                     print (("Digite um número: ", new line));
                     read (n1);
                     print (("Digite um número: ", new line));
                     read (n2);
                     print (( "Seu resultado é: ", fixed (n1 * n2, 0, 1)))
-                        ELSE IF op = 4
+                        ELIF op = 4
                             THEN
                         print (("Digite um número: ", new line));
                         read (n1);
                         print (("Digite um número: ", new line));
                         read (n2);
                         print (( "Seu resultado é: ", fixed (n1 / n2, 0, 1)))
-                            FI
-                        FI
-                    FI
                 FI
 END
 
@@ -163,10 +151,9 @@ INT idd;
         IF idd < 18
             THEN
         print ("Você é menor de idade.")
-        ELSE IF idd >= 18
+        ELIF idd >= 18
             THEN
         print ("Você é maior de idade.")
-            FI
         FI
 END
 
@@ -222,51 +209,58 @@ REAL n;
 
 END
 
-#Peça ao usuário para inserir sua altura (em metros) e seu peso (em quilogramas).
-Calcule o índice de massa corporal (IMC) usando a fórmula: IMC = peso / (altura * altura).
-Determine a categoria de peso com base no valor do IMC:
-Abaixo do peso: IMC < 18.5
-Peso normal: 18.5 ≤ IMC < 25
-Sobrepeso: 25 ≤ IMC < 30
-Obesidade grau I: 30 ≤ IMC < 35
-Obesidade grau II: 35 ≤ IMC < 40
-Obesidade grau III: IMC ≥ 40
-Exiba o valor do IMC e a categoria de peso correspondente.#
+#Escreva um programa em Algol 68 que solicite ao usuário uma nota de 0 a 100 e informe 
+se o aluno foi reprovado, aprovado ou está em recuperação. Considere as seguintes faixas de notas:
+
+Reprovado: menos de 40
+Recuperação: entre 40 e 59
+Aprovado: 60 ou mais#
 
 BEGIN
-REAL alt, kg, imc;
+INT nota;
 
+    print ("Digite sua nota: ");
+    read (nota);
 
-    print ("Digite sua altura");
-    read (alt);
-    print ("Digte seu peso");
-    read (kg);
+        IF nota <= 40
+            THEN 
+        print ("Reprovado.")
 
-    imc := kg / (alt * alt);
+        ELIF nota > 40 AND nota <= 59
+            THEN
+        print ("Recuperação.")
 
-    print ("Seu IMC é", imc);
+        ELIF nota > 100
+            THEN
+        print ("Nota inválida.")
 
-    IF imc < 18.5 THEN
-        print ("Abaixo do peso.")
+        ELSE 
+        print ("Aprovado.")
+    FI
+END 
 
-    ELSE IF imc >= 18.5 AND imc < 25 THEN
-        print ("Peso normal.")
+#Escreva um programa em Algol 68 que solicite ao usuário a temperatura em graus Celsius 
+e classifique como "Frio", "Moderado" ou "Quente" baseado nos seguintes critérios:
 
-    ELSE IF imc >= 25 AND imc < 30 THEN
-        print ("Sobrepeso.")
+Frio: abaixo de 15 graus
+Moderado: entre 15 e 25 graus
+Quente: acima de 25 graus#
 
-    ELSE IF imc >= 30 AND imc < 30 THEN 
-        print ("Obesidade grau I")
+BEGIN
+REAL temp;
+    
+    print ("Qual a temperatura?");
+    read (temp);
 
-    ELSE IF  imc >= 35 AND imc < 40 THEN 
-        print ("Obesidade grau II")
+    IF temp < 15 
+        THEN
+    print ("Frio.")
 
-    ELSE IF imc > 40 THEN 
-        print ("Obesidade grau III")
-        FI
-        FI
-        FI
-        FI
-        FI
-        FI
+    ELIF temp GE 15 AND temp < 25
+        THEN
+    print ("Temperatura Moderada.")
+
+    ELSE
+    print ("Quente.")
+    FI
 END
